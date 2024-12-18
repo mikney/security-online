@@ -1,0 +1,121 @@
+
+$br: 16px;
+.card {
+  border-radius: $br;
+  background-color: white;
+  max-width: 328px;
+
+  .gear {
+    margin-left: auto;
+    margin-right: 16px;
+    font-size: 20px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: #222222;
+    .card-number {
+      padding: 10px 16px;
+      border-top-left-radius: $br;
+      border-bottom-right-radius: $br;
+      color: white;
+      &_in_progress{
+        background-color: #5D5D5D;
+      }
+      &_expired{
+        background-color: #F9372C;
+      }
+      &_has_feedback {
+        background-color: #1C9A13;
+      }
+      &_completed {
+        background-color: #019EC1;
+      }
+    }
+    .card-status {
+      margin-left: 10px;
+    }
+  }
+
+  &__body {
+    padding: 4px 16px 16px;
+    .point {
+      display: flex;
+      color: #222222;
+      padding: 5px 0;
+      .name {
+        width: 96px;
+        color: #444444;
+        flex-shrink: 0;
+      }
+      .value {
+        font-weight: 500;
+      }
+    }
+    .card-hr {
+      border: 1px solid #DBDBDB
+    }
+    .btn-expand {
+      color: #E95721;
+      display: block;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      font-weight: 500;
+      font-size: 16px;
+      padding: 10px 16px;
+      margin-left: 66px;
+      margin-top: -10px;
+      font-family: Roboto, sans-serif;
+      &_expanded {
+        margin-top: 17px;
+      }
+    }
+    .card-text-wrapper {
+      .text-wrapper {
+        max-height: 60px;
+        overflow: hidden;
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          display: block;
+          width: 100%;
+          height: 30px;
+          left: 0;
+          bottom: 0px;
+          background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
+          pointer-events: none; /* Ensures this doesn't block interactions */
+        }
+        &_expand {
+          max-height: unset;
+          &::after {
+            display: none;
+          }
+        }
+      }
+      .text {
+        line-height: 20px;
+        letter-spacing: 0.25px;
+        color: #444444;
+
+        display: block;
+
+      }
+
+    }
+  }
+  .stretched-arrow {
+    display: inline-block;
+    font-size: 11px;
+    transform: scale(1.6, 1) translateY(-2px);
+    margin-right: 12px;
+    &_down {
+      transform: scale(1.6, 1) translateY(0px);
+    }
+  }
+
+}
